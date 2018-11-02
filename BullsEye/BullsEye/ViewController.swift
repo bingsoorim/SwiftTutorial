@@ -10,6 +10,9 @@
 
 import UIKit
 class ViewController: UIViewController {
+    
+    var currentValue: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,13 +22,20 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func showAlert() {
+        let message = "The value of the slider is: \(currentValue)"
+        
         let alert = UIAlertController(title: "Hello, World",
-                                      message: "This is my first app!",
+                                      message: message,
                                       preferredStyle: .alert)
-        let action = UIAlertAction(title: "Awesome", style: .default,
+        let action = UIAlertAction(title: "OK",
+                                   style: .default,
                                    handler: nil)
         alert.addAction(action)
+        
         // self.present -> the function that view controller has
         present(alert, animated: true, completion: nil)
+    }
+    @IBAction func sliderMoved(_ slider: UISlider) {
+        currentValue = lroundf(slider.value)
     }
 }
