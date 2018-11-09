@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     @IBAction func showAlert() {
         let difference = abs(targetValue - currentValue)
         let points = 100 - difference
-        
+        // Testing
         score += points // update the score
         
         let message = "You scored \(points) points"
