@@ -34,6 +34,8 @@ class ViewController: UIViewController {
         let difference = abs(targetValue - currentValue)
         let points = 100 - difference
         // Testing
+        // testinggg
+        
         score += points // update the score
         
         let message = "You scored \(points) points"
